@@ -6,7 +6,7 @@ let jobTitle = tellFortune(window.prompt("What is your job title?")) ;
 
 function tellFortune(job){
 
-    document.write("You will be a"+job +"in Y, and married to Z with N kids.");
+    document.write("You will be a "+job +" in Y, and married to Z with N kids.");
 
 }
 
