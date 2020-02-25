@@ -1,55 +1,121 @@
 
-let choice = window.prompt("PLAYER1: Rock, paper or scissors?");
-let choice2 = window.prompt("PLAYER2: Rock, paper or scissors?");
-let result1 = cplayer1(choice);
-let result2 = cplayer2(choice2);
+let choice = window.prompt("Rock, paper or scissors?");
+let choice2 = Math.floor(Math.random()*3);
+let result1 = choice;
+let result2 = fin(choice2);
 
-function cplayer1 (playChoice){
+function fin (dados){
+    if (dados==0){
+        return "rock";
+    }
+
+    else if (dados==1){
+        return "paper";
+    }
+
+    else {
+        return "scissors";
+    }
+}
+/*
+function cplayer (playChoice){
     if (playChoice=="rock"){
-        return playChoice;
+        return 0;
     }
     else if (playChoice=="paper"){
-        return playChoice;
+        return 1;
     }
+    else if (playChoice=="scissors"){
+        return 2;
+    }
+
     else {
         document.write("nada");
     }
 
-}
-
-function cplayer2 (playChoice2){
-    if (playChoice2=="rock"){
-        return playChoice2;
-    }
-    else if (playChoice2=="paper"){
-        return playChoice2;
-    }
-    else {
-        document.write("nada");
-    }
-
-}
+}*/
 
 
 let final = finalResult(result1, result2); 
 
 
 function finalResult (player1, player2) {
-    if (player1=="rock"){
-        return player1;
+
+    if ((player1=="rock")&&(player2=="paper")){
+        alert("You lost");
+         document.write(player1+"<br>"); 
+         document.write(player2);}
+
+    else if ((player1=="rock")&&(player2=="scissors")){
+        alert("You win");
+        document.write(player1+"<br>"); 
+        document.write(player2);
     }
 
-    if (player2=="paper"){
-        return player2;
+    else if ((player1=="rock")&&(player2=="rock")){
+        alert("tied");
+        document.write(player1+"<br>"); 
+        document.write(player2);
     }
 
-    if (player1>player2){
-        document.write("P1 WON");
+    else if ((player1=="paper")&&(player2=="rock")){
+        alert("You Win!");
+        document.write(player1+"<br>"); 
+        document.write(player2);
+    }
+ 
+    else if ((player1=="paper")&&(player2=="scissors")){
+        alert("You lost!");
+        document.write(player1+"<br>"); 
+        document.write(player2);
     }
 
+    else if ((player1=="paper")&&(player2=="paper")){
+        alert("tied");
+        document.write(player1+"<br>"); 
+        document.write(player2);
+    }
+
+    else if ((player1=="scissors")&&(player2=="rock")){
+        alert("you lost");
+        document.write(player1+"<br>"); 
+        document.write(player2);
+    }
+
+    else if ((player1=="scissors")&&(player2=="paper")){
+        alert("You Win!");
+        document.write(player1+"<br>"); 
+        document.write(player2);
+    }
+
+    else if ((player1=="scissors")&&(player2=="scissors")){
+        alert("tied");
+        document.write(player1+"<br>"); 
+        document.write(player2);
+    }
     else {
         document.write("P2 WON");
     }
 
+       
+}
 
+/*
+if (choice1 === "paper") {
+    if (choice2 === "rock") {
+        return "paper wins";
+    } else {
+        if (choice2 === "scissors") {
+            return "scissors wins";
+        }
+    }
+    if (choice1 === "scissors") {
+        if (choice2 === "rock") {
+            return "rock wins";
+        } else {
+            if (choice2 === "paper") {
+                return "scissors wins";
+            }
+        }
+    }
 }
