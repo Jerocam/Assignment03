@@ -1,9 +1,30 @@
 
-let choice = window.prompt("Rock, paper or scissors?");
+//DECLARATION VARIABLES
+let choice1;
 let choice2 = Math.floor(Math.random()*3);
-let result1 = choice;
+let error = errorCheck(choice1);
+let result1 = error;
 let result2 = fin(choice2);
+let final = finalResult(result1, result2);
 
+
+//FUNCTION FOR CHECKING IF A USER ENTERS ROCK, PAPER OR SCISSORS, THEN IT WILL PASS VALUES FOR THE FINAL RESULT
+function errorCheck(choice){
+
+    do{
+        choice = window.prompt("Rock, paper or scissors?"); 
+        if (choice!=="rock" && choice!=="paper" && choice!=="scissors"){   //if a user type any instead rock, paper or scissors, it will display error as invalid
+            window.alert("ERROR! Please type only 'rock', 'paper' or 'scissors'");
+        }
+        else{
+            return choice;                                               //if correct input, it will return value to result
+        } 
+    
+    }while(choice!=="rock" && choice!=="paper" && choice!=="scissors");    //it ends while when the input is correct like rock, paper or scissors
+
+}
+
+//FUNCTION FOR RANDOM NUMBERS FOR MATCHING 0, 1 AND 2 AS ROCK, PAPER AND SCISSORS THEN PASSES THESE VALUES TO THE RESULTS
 function fin (dados){
     if (dados==0){
         return "rock";
@@ -17,30 +38,69 @@ function fin (dados){
         return "scissors";
     }
 }
-/*
-function cplayer (playChoice){
-    if (playChoice=="rock"){
-        return 0;
+
+//FUNCTION FINAL RESULT BY A USER VS A COMPUTER PLAYING ROCK, PAPER OR SCISSORS
+function finalResult (player1, player2) {
+
+    if (player1 === "paper") {
+
+        if (player2==="paper"){
+            document.write("TIED!") ;
+        }
+        else if (player2 === "rock") {
+            document.write("You win! - Computer(rock)") ;
+        } 
+        else {
+            if (player2 === "scissors") {
+                document.write("You lost! - Computer(scissors)") ;
+            }
+        }
     }
-    else if (playChoice=="paper"){
-        return 1;
-    }
-    else if (playChoice=="scissors"){
-        return 2;
+    
+    if (player1 === "scissors") {
+
+        if (player2==="scissors"){
+            document.write("TIED!") ;
+        }
+        else if (player2 === "rock") {
+            document.write("You lost! - Computer(rock)") ;
+        } 
+        else {
+            if (player2 === "paper") {
+                document.write("You win! - Computer(paper)") ;
+            }
+        }
     }
 
     else {
-        document.write("nada");
+
+        if (player1 ==="rock"){
+            if (player2 === "rock") {
+                document.write("TIED!") ;
+            } 
+            else if (player2 === "paper"){
+                    document.write("You lost! - Computer(paper)") ;
+            }
+            else {
+                if (player2==="scissors"){
+                document.write("You win! - Computer(scissors)");
+            }
+            }
+        }
     }
 
-}*/
+}
 
 
-let final = finalResult(result1, result2); 
 
 
-function finalResult (player1, player2) {
 
+
+
+
+//It is other way of conditional but it is very long code!
+
+/*  function finalResult (player1, player2) {
     if ((player1=="rock")&&(player2=="paper")){
         alert("You lost");
          document.write(player1+"<br>"); 
@@ -96,26 +156,5 @@ function finalResult (player1, player2) {
     else {
         document.write("P2 WON");
     }
-
-       
 }
-
-/*
-if (choice1 === "paper") {
-    if (choice2 === "rock") {
-        return "paper wins";
-    } else {
-        if (choice2 === "scissors") {
-            return "scissors wins";
-        }
-    }
-    if (choice1 === "scissors") {
-        if (choice2 === "rock") {
-            return "rock wins";
-        } else {
-            if (choice2 === "paper") {
-                return "scissors wins";
-            }
-        }
-    }
-}
+*/
