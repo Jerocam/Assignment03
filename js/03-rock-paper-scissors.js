@@ -1,3 +1,4 @@
+/*eslint-env browser*/
 
 //DECLARATION VARIABLES
 let choice1;
@@ -10,7 +11,7 @@ let final = finalResult(result1, result2);
 
 //FUNCTION FOR CHECKING IF A USER ENTERS ROCK, PAPER OR SCISSORS, THEN IT WILL PASS VALUES FOR THE FINAL RESULT
 function errorCheck(choice){
-
+"use strict";
     do{
         choice = window.prompt("Rock, paper or scissors?"); 
         if (choice!=="rock" && choice!=="paper" && choice!=="scissors"){   //if a user type any instead rock, paper or scissors, it will display error as invalid
@@ -26,6 +27,7 @@ function errorCheck(choice){
 
 //FUNCTION FOR RANDOM NUMBERS FOR MATCHING 0, 1 AND 2 AS ROCK, PAPER AND SCISSORS THEN PASSES THESE VALUES TO THE RESULTS
 function fin (dados){
+    "use strict";
     if (dados==0){
         return "rock";
     }
@@ -41,7 +43,7 @@ function fin (dados){
 
 //FUNCTION FINAL RESULT BY A USER VS A COMPUTER PLAYING ROCK, PAPER OR SCISSORS
 function finalResult (player1, player2) {
-
+"use strict";
     if (player1 === "paper") {
 
         if (player2==="paper"){
