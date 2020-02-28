@@ -1,3 +1,5 @@
+/*eslint-env browser*/
+
 //DECLARATION VARIABLES
 let number1 = 0;
 let number2 = 0;
@@ -9,6 +11,7 @@ let total = calculate(result1, result2, result3);
 
 //FUNCTION FOR CHECKING IF A USER ENTERS A NUMBER, THEN IT WILL PASS THE VALUE FOR THE FINAL RESULT
 function errorCheck1(firstNumber){
+    "use strict";
     do{
         firstNumber = parseFloat(window.prompt("Enter a number"));
         if (isNaN(firstNumber)){                                //if a user type any instead numbers, it will display error as invalid
@@ -22,6 +25,7 @@ function errorCheck1(firstNumber){
 
 //FUNCTION FOR CHECKING IF A USER ENTERS A SECOND NUMBER, THEN IT WILL PASS THE VALUE FOR THE FINAL RESULT
 function errorCheck2(secondNumber){
+     "use strict";
     do {
         secondNumber = parseFloat(window.prompt("Enter a second number"));
         if (isNaN(secondNumber)){                   //if a user type any instead numbers, it will display error as invalid
@@ -34,6 +38,7 @@ function errorCheck2(secondNumber){
 
 //FUNCTION FOR CHECKING IF A USER ENTERS A OPERATOR (+,-,* AND /), THEN IT WILL PASS THE VALUE FOR THE FINAL RESULT
 function errorCheck3(opNumber){
+     "use strict";
     do {
         opNumber = window.prompt("Enter an arithmetic operator for calculating two numbers");
         if (opNumber!=='+' && opNumber!=='/' && opNumber!=='-' && opNumber!=='*'){   //if a user type any instead one of 4 operators, it will display error as invalid
